@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="CodeTools.parts.ucGridCode"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="1300" d:DesignWidth="1300">
+    <Grid x:Name="LayoutRoot">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"></RowDefinition>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Grid.Column="0" Text="Grid代码自动生成" FontSize="32" Foreground="Red" TextAlignment="Center" Margin="0,5"></TextBlock>
+        <Border Grid.Row="1" Grid.Column="0" BorderBrush="Red" BorderThickness="1" >
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                    <RowDefinition></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0" Text="行数：" FontSize="32" Foreground="Red" TextAlignment="Right" Margin="10,5"></TextBlock>
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="列数：" FontSize="32" Foreground="Red" TextAlignment="Right" Margin="10,5"></TextBlock>
+                <TextBox x:Name="tbRow" Grid.Row="0" Grid.Column="1" Text="1" FontSize="36" Foreground="Blue" Width="50" TextAlignment="Right" Margin="120,5,0,2" HorizontalAlignment="Left"></TextBox>
+                <TextBox x:Name="tbColumn" Grid.Row="1" Grid.Column="1" Text="1" FontSize="36" Foreground="Blue" Width="50" TextAlignment="Right" Margin="120,5,0,2" HorizontalAlignment="Left"></TextBox>
+                <Button x:Name="btnSubRow" Grid.Row="0" Grid.Column="1" Content="减" Width="50" FontSize="32" Foreground="Green" Margin="60,2,0,0" HorizontalAlignment="Left" Click="Btn_Click"></Button>
+                <Button x:Name="btnAddRow" Grid.Row="0" Grid.Column="1" Content="加" Width="50" FontSize="32" Foreground="Green" Margin="180,2,0,0" HorizontalAlignment="Left" Click="Btn_Click"></Button>
+                <Button x:Name="btnSubCol" Grid.Row="1" Grid.Column="1" Content="减" Width="50" FontSize="32" Foreground="Green" Margin="60,2,0,0" HorizontalAlignment="Left" Click="Btn_Click"></Button>
+                <Button x:Name="btnAddCol" Grid.Row="1" Grid.Column="1" Content="加" Width="50" FontSize="32" Foreground="Green" Margin="180,2,0,0" HorizontalAlignment="Left" Click="Btn_Click"></Button>
+                <Button x:Name="btnBuild" Grid.Row="2" Grid.Column="1" Content="生成" Width="150" FontSize="32" Foreground="Green" Margin="10,2,0,0" HorizontalAlignment="Right" Click="btnBuild_Click"></Button>
+            </Grid>
+        </Border>
+        <Border Grid.Row="2" Grid.Column="0" BorderBrush="Blue" BorderThickness="1">
+            <TextBox x:Name="tbResult"></TextBox>
+        </Border>
+
+    </Grid>
+</UserControl>
