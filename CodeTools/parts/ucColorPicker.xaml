@@ -12,7 +12,7 @@
         </Style>
         <Style TargetType="Slider" >
             <Setter Property="Margin" Value="5,22,0,0"></Setter>
-            <Setter Property="Minimum" Value="1"></Setter>
+            <Setter Property="Minimum" Value="0"></Setter>
             <Setter Property="Maximum" Value="255"></Setter>
             <Setter Property="TickPlacement" Value="None"></Setter>
             <Setter Property="IsSnapToTickEnabled" Value="True"></Setter>
@@ -36,18 +36,23 @@
             <ColumnDefinition Width="50"></ColumnDefinition>
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition Width="150"></ColumnDefinition>
-            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="160"></ColumnDefinition>
+            <ColumnDefinition Width="220"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <TextBlock Grid.Row="0" Grid.Column="0" Text="R:" Style="{StaticResource styleTB1}" Foreground="Red"></TextBlock>
         <TextBlock Grid.Row="1" Grid.Column="0" Text="G:" Style="{StaticResource styleTB1}" Foreground="Green"></TextBlock>
         <TextBlock Grid.Row="2" Grid.Column="0" Text="B:" Style="{StaticResource styleTB1}" Foreground="Blue"></TextBlock>
         
-        <Slider Grid.Row="0" Grid.Column="1" x:Name="sliderR" Tag="R" ValueChanged="slider_ValueChanged"></Slider>
-        <Slider Grid.Row="1" Grid.Column="1" x:Name="sliderG" Tag="G" ValueChanged="slider_ValueChanged"></Slider>
-        <Slider Grid.Row="2" Grid.Column="1" x:Name="sliderB" Tag="B" ValueChanged="slider_ValueChanged"></Slider>
+        <Slider Grid.Row="0" Grid.Column="1" x:Name="sliderR" Value="{Binding ElementName=txtR,Path=Text,Mode=TwoWay}" ValueChanged="sliderRGB_ValueChanged"></Slider>
+        <Slider Grid.Row="1" Grid.Column="1" x:Name="sliderG" Value="{Binding ElementName=txtG,Path=Text,Mode=TwoWay}" ValueChanged="sliderRGB_ValueChanged"></Slider>
+        <Slider Grid.Row="2" Grid.Column="1" x:Name="sliderB" Value="{Binding ElementName=txtB,Path=Text,Mode=TwoWay}" ValueChanged="sliderRGB_ValueChanged"></Slider>
         
-        <TextBox Grid.Row="0" Grid.Column="2" x:Name="txtR" Style="{StaticResource styleTBox}" Text="{Binding ElementName=silderR,Path=Value,Mode=TwoWay}"></TextBox>
-        <TextBox Grid.Row="1" Grid.Column="2" x:Name="txtG" Style="{StaticResource styleTBox}" Text=""></TextBox>
-        <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtB" Style="{StaticResource styleTBox}" Text=""></TextBox>
+        <TextBox Grid.Row="0" Grid.Column="2" x:Name="txtR" Style="{StaticResource styleTBox}" Text="0"></TextBox>
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="txtG" Style="{StaticResource styleTBox}" Text="0"></TextBox>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="txtB" Style="{StaticResource styleTBox}" Text="0"></TextBox>
+        
+        <Border Grid.Row="0" Grid.RowSpan="3" Grid.Column="3" x:Name="borderColor" BorderBrush="Black" BorderThickness="1" CornerRadius="10" Height="150" Width="150" VerticalAlignment="Top" HorizontalAlignment="Left" Background="Black"></Border>
+        
+        <TextBox x:Name="txtColor" Grid.Row="1" Grid.Column="4" Style="{StaticResource styleTBox}" Width="200" Text="#FF000000"></TextBox>
     </Grid>
 </UserControl>

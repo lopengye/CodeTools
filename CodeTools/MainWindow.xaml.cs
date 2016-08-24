@@ -44,20 +44,6 @@ namespace CodeTools
                 tvi.MouseDoubleClick += tvi_MouseDoubleClick;
                 tvMenu.Items.Add(tvi);
             }
-
-            //TreeViewItem tviGridCode = new TreeViewItem() { Header = "Grid代码生成", Tag = "ucGridCode" };
-            //tviGridCode.MouseDoubleClick += tvi_MouseDoubleClick;
-            //tvMenu.Items.Add(tviGridCode);
-
-            //TreeViewItem tviClassCode = new TreeViewItem() { Header = "类代码生成", Tag = "ucClassCode" };
-            //tviClassCode.MouseDoubleClick += tvi_MouseDoubleClick;
-            //tvMenu.Items.Add(tviClassCode);
-
-            //TreeViewItem tviColorPicker = new TreeViewItem() { Header="颜色拾取器",Tag="ucColorPicker"};
-            //tviColorPicker.MouseDoubleClick += tvi_MouseDoubleClick;
-            //tvMenu.Items.Add(tviColorPicker);
-
-            //tvMenu.MouseDoubleClick += tvi_MouseDoubleClick;
         }
 
         void tvi_MouseDoubleClick(object sender, MouseButtonEventArgs e)
